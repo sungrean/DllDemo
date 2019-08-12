@@ -201,7 +201,7 @@ string anlzRP(unsigned char buf[])
 	string m_model_wave = "[";				//基准波形
 	for (int i = 0; i < WAVE_LEN; i++)
 	{
-		if (i = 0)
+		if (i == 0)
 		{ 
 		}
 		else {
@@ -213,7 +213,7 @@ string anlzRP(unsigned char buf[])
 	string m_wave_wave = "[";				//被测波形
 	for (int i = 0; i < WAVE_LEN; i++)
 	{
-		if (i = 0)
+		if (i == 0)
 		{
 		}
 		else {
