@@ -182,9 +182,7 @@ typedef unsigned char Byte;
 
 string anlzRP(unsigned char buf[])
 {
-	REC_T m_rec;
-	REC_T *m_pRecBuf;
-	int m_recCnt;
+	REC_T m_rec;  
 	u16 len = *(u16*)(buf + 1);
 	if (FRM_LEN_RP == len)
 	{
@@ -217,9 +215,9 @@ string anlzRP(unsigned char buf[])
 		{
 		}
 		else {
-			m_model_wave = m_model_wave + ",";
+			m_wave_wave = m_wave_wave + ",";
 		}
-		m_model_wave = m_model_wave + to_string(m_rec.m_wave.wave[i]);
+		m_wave_wave = m_wave_wave + to_string(m_rec.m_wave.wave[i]);
 	}
 	m_wave_wave = m_wave_wave + "]";
 
@@ -326,7 +324,7 @@ string anlzRP(unsigned char buf[])
 extern "C" __declspec(dllexport) void getResult(Byte  *buf, Byte *result, int size);
 void  __declspec(dllexport) getResult(Byte *buf, Byte *result, int size)
 {
-	string str=anlzRP(buf);
+	string str="hello jane";
 	const char *p = str.c_str();
 	for (int i = 0; i < str.size(); i++)
 	{
