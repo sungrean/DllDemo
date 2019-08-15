@@ -224,7 +224,7 @@ string anlzRP(unsigned char buf[])
 	string strbase = "";
 	strbase = strbase 
 		+ "{ \"m_model\":"+ 
-		" {\"wave\":%s"+ 
+		" {\"wave\":"+ m_model_wave+
 		",\"RTC_DateStruct\":\""+ date_String(m_rec.m_wave.RTC_DateStruct)+
 		"\",\"RTC_TimeStruct\":\"" + time_String(m_rec.m_wave.RTC_TimeStruct)+
 		"\",\"ch\":\"" + to_string(m_rec.m_wave.ch) +
@@ -270,7 +270,7 @@ string anlzRP(unsigned char buf[])
 		"\",\"judge\":\"" + to_string(m_rec.m_wave.judge) +
 		"\",\"valid\":\"" + to_string(m_rec.m_wave.valid) +
 		"\"},"
-		+ "\"m_model\":{\"wave\":%s" +
+		+ "\"m_wave\":{\"wave\":" + m_wave_wave+
 		",\"RTC_DateStruct\":\"" + date_String(m_rec.m_wave.RTC_DateStruct) +
 		"\",\"RTC_TimeStruct\":\"" + time_String(m_rec.m_wave.RTC_TimeStruct) +
 		"\",\"ch\":\"" + to_string(m_rec.m_model.ch) +
@@ -324,7 +324,7 @@ string anlzRP(unsigned char buf[])
 extern "C" __declspec(dllexport) void getResult(Byte  *buf, Byte *result, int size);
 void  __declspec(dllexport) getResult(Byte *buf, Byte *result, int size)
 {
-	string str="hello jane";
+	string str=anlzRP(buf);
 	const char *p = str.c_str();
 	for (int i = 0; i < str.size(); i++)
 	{
